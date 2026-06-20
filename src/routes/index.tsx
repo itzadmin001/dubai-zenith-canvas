@@ -41,13 +41,13 @@ import renovationImg from "@/assets/renovation.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Maison Atelier — Luxury Interior Design & Bespoke Furniture, Dubai" },
+      { title: "Jhalak Technicals — Professional Technical Services & Solutions" },
       {
         name: "description",
         content:
-          "Dubai's atelier for bespoke interiors. Custom furniture, villa & apartment fit-outs, and timeless luxury design crafted for discerning clients.",
+          "Jhalak Technicals - Professional technical services and solutions for all your technical needs.",
       },
-      { property: "og:title", content: "Maison Atelier — Luxury Interiors, Dubai" },
+      { property: "og:title", content: "Jhalak Technicals — Professional Services" },
       {
         property: "og:description",
         content: "Bespoke interiors and custom furniture crafted in Dubai.",
@@ -73,10 +73,10 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "InteriorDesignBusiness",
-          name: "Maison Atelier",
+          "@type": "ProfessionalService",
+          name: "Jhalak Technicals",
           description:
-            "Luxury interior design and bespoke furniture atelier based in Dubai.",
+            "Professional technical services and solutions based in Dubai.",
           areaServed: "Dubai, UAE",
           address: {
             "@type": "PostalAddress",
@@ -215,27 +215,26 @@ function Hero() {
 /* ---------- TRUSTED MARQUEE ---------- */
 function Marquee() {
   const partners = [
-    "EMAAR",
-    "DAMAC",
-    "MERAAS",
-    "NAKHEEL",
-    "OMNIYAT",
-    "SOBHA",
-    "SELECT GROUP",
-    "ALDAR",
+    "Luxury Villas",
+    "Interior Designers",
+    "Hotels",
+    "Restaurants",
+    "Corporate Offices",
+    "Apartments",
+    "Private Residences",
   ];
   const row = [...partners, ...partners];
   return (
     <section className="border-y border-border bg-bone py-10 overflow-hidden">
       <div className="container-luxe">
-        <p className="eyebrow mb-6">Trusted by Dubai's finest developers</p>
+        <p className="eyebrow mb-6">TRUSTED BY LUXURY HOMES & INTERIOR DESIGNERS</p>
       </div>
       <div className="flex overflow-hidden">
         <div className="flex shrink-0 animate-marquee gap-16 px-8 whitespace-nowrap">
           {row.map((p, i) => (
             <span
               key={i}
-              className="font-display text-2xl md:text-3xl text-ink/30 tracking-[0.25em]"
+              className="font-display text-2xl uppercase md:text-3xl text-ink/30 tracking-[0.25em]"
             >
               {p}
             </span>
@@ -249,7 +248,7 @@ function Marquee() {
 /* ---------- WHY US ---------- */
 function WhyUs() {
   const items = [
-    { icon: Award, t: "15+ Years", s: "Of bespoke craftsmanship across Dubai's most discerning homes." },
+    { icon: Award, t: "10+ Years", s: "Of bespoke craftsmanship across Dubai's most discerning homes." },
     { icon: Hammer, t: "In-House Atelier", s: "Designers, craftsmen, joinery — under one roof, end to end." },
     { icon: Sparkles, t: "Premium Materials", s: "Italian fabrics, calacatta marble, walnut, brass, hand-finished." },
     { icon: Users, t: "Dedicated Team", s: "One project lead. One promise. No layers, no compromise." },
@@ -406,11 +405,10 @@ function Projects() {
               <button
                 key={c}
                 onClick={() => setActive(c)}
-                className={`px-5 py-2.5 text-xs tracking-[0.2em] uppercase border transition-all duration-500 ${
-                  active === c
-                    ? "bg-gold border-gold text-ink"
-                    : "border-bone/20 text-bone/70 hover:border-bone hover:text-bone"
-                }`}
+                className={`px-5 py-2.5 text-xs tracking-[0.2em] uppercase border transition-all duration-500 ${active === c
+                  ? "bg-gold border-gold text-ink"
+                  : "border-bone/20 text-bone/70 hover:border-bone hover:text-bone"
+                  }`}
               >
                 {c}
               </button>
@@ -498,7 +496,7 @@ function ApartmentSplit() {
             <Reveal delay={0.3}>
               <div className="mt-10 flex flex-wrap gap-4">
                 <a href="#contact" className="btn-gold">
-                  Book Free Consultation <ArrowRight size={14} />
+                  <span>Book Free Consultation</span> <ArrowRight size={14} />
                 </a>
                 <a href="#projects" className="nav-link text-ink mt-4">
                   See recent work
@@ -545,9 +543,9 @@ function Stats() {
 function Testimonials() {
   const items = [
     {
-      q: "Maison Atelier reshaped our penthouse with a restraint we had not seen elsewhere in Dubai. Every detail considered.",
+      q: "Jhalak Technicals provided exceptional service with attention to every detail. Highly professional and reliable.",
       n: "H. Al Marri",
-      r: "Penthouse owner · Palm Jumeirah",
+      r: "CEO · Dubai Tech Solutions",
     },
     {
       q: "Punctual, discreet, and obsessive in the best way. The joinery is genuinely the best we've ever commissioned.",
@@ -608,7 +606,7 @@ function About() {
       <div className="container-luxe grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <Reveal className="lg:col-span-5">
           <div className="relative aspect-[4/5] overflow-hidden hover-zoom-img">
-            <img src={aboutImg} alt="Maison Atelier studio" loading="lazy" className="h-full w-full object-cover" />
+            <img src={aboutImg} alt="Jhalak Technicals team" loading="lazy" className="h-full w-full object-cover" />
           </div>
         </Reveal>
         <div className="lg:col-span-7">
@@ -670,13 +668,13 @@ function CTA() {
         <Reveal delay={0.3}>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a href="https://wa.me/97140000000" className="btn-gold">
-              <MessageCircle size={14} /> WhatsApp Us
+              <MessageCircle size={14} /> <span> WhatsApp Us</span>
             </a>
             <a
               href="tel:+97140000000"
               className="btn-ghost-luxe !border-bone/50 !text-bone hover:!bg-bone hover:!text-ink"
             >
-              <Phone size={14} /> Call Now
+              <Phone size={14} /> <span>Call Now</span>
             </a>
           </div>
         </Reveal>
@@ -741,9 +739,8 @@ function FAQ() {
                     </span>
                   </button>
                   <div
-                    className={`grid transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                      isOpen ? "grid-rows-[1fr] opacity-100 pb-7" : "grid-rows-[0fr] opacity-0"
-                    }`}
+                    className={`grid transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isOpen ? "grid-rows-[1fr] opacity-100 pb-7" : "grid-rows-[0fr] opacity-0"
+                      }`}
                   >
                     <div className="overflow-hidden">
                       <p className="text-muted-foreground leading-relaxed max-w-2xl">{f.a}</p>
@@ -764,7 +761,7 @@ function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Hello Maison Atelier,%0A%0AName: ${encodeURIComponent(
+    const text = `Hello Jhalak Technicals,%0A%0AName: ${encodeURIComponent(
       form.name,
     )}%0APhone: ${encodeURIComponent(form.phone)}%0A%0A${encodeURIComponent(form.message)}`;
     window.open(`https://wa.me/97140000000?text=${text}`, "_blank");
@@ -806,7 +803,7 @@ function Contact() {
                 required
               />
               <button type="submit" className="btn-gold">
-                Send via WhatsApp <ArrowRight size={14} />
+                <span>Send via WhatsApp</span> <ArrowRight size={14} />
               </button>
             </form>
           </Reveal>
@@ -831,10 +828,10 @@ function Contact() {
               </ContactRow>
               <ContactRow icon={Mail} title="Email">
                 <a
-                  href="mailto:studio@maisonatelier.ae"
+                  href="mailto:manishswami4056@gmail.com"
                   className="hover:text-gold transition-colors"
                 >
-                  studio@maisonatelier.ae
+                  manishswami4056@gmail.com
                 </a>
               </ContactRow>
               <ContactRow icon={Clock} title="Working hours">
@@ -941,11 +938,11 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
             <p className="font-display text-3xl md:text-4xl text-bone">
-              Maison<span className="text-gold">·</span>Atelier
+              Jhalak<span className="text-gold">·</span>Technicals
             </p>
             <p className="mt-6 max-w-md text-bone/60 leading-relaxed">
-              A Dubai studio for bespoke interiors and considered furniture.
-              Quiet luxury, hand-finished.
+              Professional technical services and solutions based in Dubai.
+              Delivering quality, reliability, and expertise.
             </p>
           </div>
           <FooterCol
@@ -963,7 +960,7 @@ function Footer() {
 
         <div className="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <p className="text-xs tracking-[0.18em] uppercase text-bone/40">
-            © 2026 Maison Atelier LLC. All rights reserved.
+            © 2026 Jhalak Technicals. All rights reserved.
           </p>
           <div className="flex gap-3">
             {[Instagram, Facebook, Linkedin, Youtube].map((I, i) => (

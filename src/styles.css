@@ -4,6 +4,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+* {
+  user-select: none;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -78,8 +82,14 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -87,12 +97,20 @@
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 {
+
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     font-weight: 400;
     letter-spacing: -0.02em;
   }
-  ::selection { background: var(--gold); color: var(--ink); }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--ink);
+  }
 }
 
 @utility container-luxe {
@@ -100,8 +118,14 @@
   margin-inline: auto;
   max-width: 84rem;
   padding-inline: 1.5rem;
-  @media (min-width: 768px) { padding-inline: 3rem; }
-  @media (min-width: 1280px) { padding-inline: 4rem; }
+
+  @media (min-width: 768px) {
+    padding-inline: 3rem;
+  }
+
+  @media (min-width: 1280px) {
+    padding-inline: 4rem;
+  }
 }
 
 @utility eyebrow {
@@ -114,6 +138,7 @@
   color: var(--gold);
   font-weight: 500;
 }
+
 @utility eyebrow-line {
   &::before {
     content: "";
@@ -140,6 +165,7 @@
   position: relative;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
   &::before {
     content: "";
     position: absolute;
@@ -149,13 +175,21 @@
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 0;
   }
-  & > * { position: relative; z-index: 1; }
+
+  &>* {
+    position: relative;
+    z-index: 1;
+  }
+
   &:hover {
     color: var(--ink);
     transform: translateY(-2px);
     box-shadow: var(--shadow-soft);
   }
-  &:hover::before { transform: translateY(0); }
+
+  &:hover::before {
+    transform: translateY(0);
+  }
 }
 
 @utility btn-ghost-luxe {
@@ -172,6 +206,7 @@
   font-weight: 500;
   border-radius: 2px;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
   &:hover {
     background: var(--ink);
     color: var(--bone);
@@ -186,30 +221,59 @@
   text-transform: uppercase;
   color: currentColor;
   padding: 0.25rem 0;
+
   &::after {
     content: "";
     position: absolute;
-    left: 0; right: 100%; bottom: -2px;
+    left: 0;
+    right: 100%;
+    bottom: -2px;
     height: 1px;
     background: var(--gold);
     transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  &:hover::after { right: 0; }
+
+  &:hover::after {
+    right: 0;
+  }
 }
 
 @utility hover-zoom-img {
-  & img { transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
-  &:hover img { transform: scale(1.06); }
+  & img {
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &:hover img {
+    transform: scale(1.06);
+  }
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
-@utility animate-marquee { animation: marquee 40s linear infinite; }
+
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+}
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-@utility fade-up { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@utility fade-up {
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

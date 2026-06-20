@@ -22,16 +22,15 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
-        scrolled
-          ? "bg-bone/75 backdrop-blur-xl border-b border-border/60 py-4"
-          : "bg-transparent py-7"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${scrolled
+        ? "bg-bone/75 backdrop-blur-xl border-b border-border/60 py-4"
+        : "bg-transparent py-7"
+        }`}
     >
       <div className="container-luxe grid grid-cols-[minmax(0,1fr)_auto] items-center gap-6 lg:grid-cols-3">
         <a href="#home" className="flex items-center gap-2 min-w-0">
           <span className="font-display text-2xl md:text-3xl tracking-tight text-ink">
-            Maison<span className="text-gold">·</span>Atelier
+            Jhalak<span className="text-gold">·</span>Technicals
           </span>
         </a>
 
@@ -56,7 +55,7 @@ export function Navbar() {
             rel="noreferrer"
             className="btn-gold !py-3 !px-5 text-[11px]"
           >
-            <MessageCircle size={14} /> WhatsApp
+            <MessageCircle size={14} /> <span>WhatsApp</span>
           </a>
         </div>
 
@@ -87,7 +86,7 @@ export function Navbar() {
                 <Phone size={14} /> Call
               </a>
               <a href="https://wa.me/97140000000" className="btn-gold flex-1">
-                <MessageCircle size={14} /> WhatsApp
+                <MessageCircle size={14} /><span>WhatsApp</span>
               </a>
             </div>
           </div>
