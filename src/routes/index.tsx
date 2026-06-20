@@ -136,7 +136,7 @@ function Hero() {
           width={1920}
           height={1280}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/20 to-ink/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/60 to-ink/70" />
       </motion.div>
 
       <motion.div style={{ opacity }} className="relative z-10 h-full flex items-end pb-20 md:pb-28">
@@ -145,7 +145,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="eyebrow eyebrow-line text-gold-soft"
+            className="eyebrow eyebrow-line text-gold-soft "
           >
             Est. Dubai · Atelier of Interiors
           </motion.span>
